@@ -33,7 +33,7 @@ for ticker in tickers:
     page = requests.get(url)
     page_content = page.content
     soup = BeautifulSoup(page_content,'html.parser')
-    tabl = soup.find_all("table", {"class" : "Lh(1.7) W(100%) M(0)"})
+    tabl = soup.find_all("table", {"class" : "smartphone_Px(20px) Mb(30px)"})
     for t in tabl:
         rows = t.find_all("tr")
         for row in rows:
