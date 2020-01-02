@@ -8,7 +8,7 @@
 # Import necesary libraries
 import pandas as pd
 import pandas_datareader.data as pdr
-import datetime
+import datetime as d
 
 # Download historical data for required stocks
 tickers = ["MSFT","AMZN","AAPL","CSCO","IBM","FB"]
@@ -28,7 +28,6 @@ while len(tickers) != 0 and attempt <= 5:
             print(tickers[i]," :failed to fetch data...retrying")
             continue
     attempt+=1
-    
 # Handling NaN Values
 close_prices.fillna(method='bfill',axis=0,inplace=True) # Replaces NaN values with the next valid value along the column
 close_prices.dropna(how='any',axis=0,inplace=True) # Deletes any row where NaN value exists
