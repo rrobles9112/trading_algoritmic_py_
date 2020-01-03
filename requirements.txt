@@ -2,7 +2,7 @@ cython
 
 xlrd
 
-alpha-vantage
+alpha_vantage
 
 beautifulsoup4
 
