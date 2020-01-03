@@ -102,11 +102,11 @@ def max_dd(DF):
 
 # Download historical data for DJI constituent stocks
 
-tickers = ["MSFT","AAPL","FB","AMZN","INTC", "CSCO","VZ","IBM","QCOM","LYFT"]
+tickers = ["MSFT","AAPL","FB"]
 
 
 ohlc_intraday = {} # directory with ohlc value for each stock            
-key_path = "D:\\Udemy\\Quantitative Investing Using Python\\1_Getting Data\\AlphaVantage\\key.txt"
+key_path = "C:\\Users\\rrobl\Documents\\AlphaVantage\\key.txt"
 ts = TimeSeries(key=open(key_path,'r').read(), output_format='pandas')
 
 attempt = 0 # initializing passthrough variable

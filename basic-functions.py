@@ -8,7 +8,7 @@
 # Import necesary libraries
 import pandas as pd
 import pandas_datareader.data as pdr
-import datetime as d
+import datetime
 
 # Download historical data for required stocks
 tickers = ["MSFT","AMZN","AAPL","CSCO","IBM","FB"]
