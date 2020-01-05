@@ -59,8 +59,8 @@ def max_dd(DF):
 tickers = ["MSFT","AAPL"]
 
 ohlc_intraday = {} # directory with ohlc value for each stock            
-key_path = "C:\\Users\\rrobl\Documents\\AlphaVantage\\key.txt"
-ts = TimeSeries(key=open(key_path,'r').read(), output_format='pandas')
+key_path = "1P9Q485FWSMC7TW5"
+ts = TimeSeries(key=key_path, output_format='pandas')
 
 attempt = 0 # initializing passthrough variable
 drop = [] # initializing list to store tickers whose close price was successfully extracted

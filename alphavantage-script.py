@@ -10,9 +10,9 @@ import pandas as pd
 
 
 all_tickers = ["AAPL","MSFT","CSCO","AMZN"]
-key_path = "C:\\Udemy\\Quantitative Investing Using Python\\2_Getting Data\\AlphaVantage\\key.txt"
+key_path = "1P9Q485FWSMC7TW5"
 
-ts = TimeSeries(key=open(key_path,'r').read(), output_format='pandas')
+ts = TimeSeries(key=key_path, output_format='pandas')
 data = ts.get_intraday(symbol='MSFT',interval='1min', outputsize='full')[0]
 data.columns = ["open","high","low","close","volume"]
 
@@ -28,7 +28,7 @@ while len(cp_tickers) != 0 and attempt <=5:
     cp_tickers = [j for j in cp_tickers if j not in drop]
     for i in range(len(cp_tickers)):
         try:
-            ts = TimeSeries(key=open(key_path,'r').read(), output_format='pandas')
+            ts = TimeSeries(key=key_path, output_format='pandas')
             data = ts.get_intraday(symbol=cp_tickers[i],interval='1min', outputsize='full')[0]
             data.columns = ["open","high","low","close","volume"]
             close_prices[cp_tickers[i]] = data["close"]

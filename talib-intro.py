@@ -17,7 +17,7 @@ tickers = ["MSFT","AAPL","FB","AMZN","INTC", "CSCO","VZ","IBM","QCOM","LYFT"]
 # Extract OHLCV data for the tickers
 ohlc_tech = {} # directory with ohlc value for each stock            
 key_path = "D:\\Udemy\\Quantitative Investing Using Python\\1_Getting Data\\AlphaVantage\\key.txt"
-ts = TimeSeries(key=open(key_path,'r').read(), output_format='pandas')
+ts = TimeSeries(key=key_path, output_format='pandas')
 
 attempt = 0 # initializing passthrough variable
 drop = [] # initializing list to store tickers whose close price was successfully extracted
