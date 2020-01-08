@@ -4,7 +4,7 @@
 
 # Please report bug/issues in the Q&A section
 # =============================================================================
-
+import matplotlib
 import numpy as np
 import pandas as pd
 from alpha_vantage.timeseries import TimeSeries
