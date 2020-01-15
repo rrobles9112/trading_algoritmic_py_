@@ -8,6 +8,7 @@
 # Import necesary libraries
 import pandas_datareader.data as pdr
 import datetime
+import matplotlib.pyplot as plt
 
 # Download historical data for required stocks
 ticker = "MSFT"
@@ -39,3 +40,7 @@ def BollBnd(DF,n):
 
 # Visualizing Bollinger Band of the stocks for last 100 data points
 BollBnd(ohlcv,20).iloc[-100:,[-4,-3,-2]].plot(title="Bollinger Band")
+
+
+
+plt.show()
