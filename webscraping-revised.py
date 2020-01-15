@@ -5,7 +5,6 @@
 # Please report bugs/issues in the Q&A section
 # =============================================================================
 
-
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -43,7 +42,7 @@ for ticker in tickers:
     page = requests.get(url)
     page_content = page.content
     soup = BeautifulSoup(page_content,'html.parser')
-    tabl = soup.find_all("div", {"class" : "M(0) Mb(10px) Whs(n) BdEnd Bdc($seperatorColor) D(itb)"})
+    tabl = soup.find_all("section", {"class" : "smartphone_Px(20px) Mb(30px)"})
     for t in tabl:
         rows = t.find_all("div", {"class" : "rw-expnded"})
         for row in rows:
@@ -55,6 +54,7 @@ for ticker in tickers:
     page_content = page.content
     soup = BeautifulSoup(page_content,'html.parser')
     tabl = soup.findAll("table", {"class": "W(100%) Bdcl(c) Mt(10px) "})
+
     for t in tabl:
         rows = t.find_all("tr")
         for row in rows:
