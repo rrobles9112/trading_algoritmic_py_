@@ -10,9 +10,11 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
-tickers = ["MMM","AXP","AAPL","BA","CAT","CVX","CSCO","KO","DIS","DWDP",
-           "XOM","GE","GS","HD","IBM","INTC","JNJ","JPM","MCD","MRK",
-           "MSFT","NKE","PFE","PG","TRV","UTX","UNH","VZ","V","WMT"]
+# tickers = ["MMM","AXP","AAPL","BA","CAT","CVX","CSCO","KO","DIS","DWDP",
+#            "XOM","GE","GS","HD","IBM","INTC","JNJ","JPM","MCD","MRK",
+#            "MSFT","NKE","PFE","PG","TRV","UTX","UNH","VZ","V","WMT"]
+
+tickers = ["MMM","AXP","AAPL"]
 
 #list of tickers whose financial data needs to be extracted
 financial_dir = {}
@@ -27,7 +29,7 @@ for ticker in tickers:
     page = requests.get(url)
     page_content = page.content
     soup = BeautifulSoup(page_content,'html.parser')
-    tabl = soup.find_all("table", {"class" : "Lh(1.7) W(100%) M(0)"})
+    tabl = soup.find_all("table", {"class" : "W(100%) Whs(nw) Ovx(a) BdT Bdtc($seperatorColor)"})
     for t in tabl:
         rows = t.find_all("tr")
         for row in rows:
@@ -39,9 +41,9 @@ for ticker in tickers:
     page = requests.get(url)
     page_content = page.content
     soup = BeautifulSoup(page_content,'html.parser')
-    tabl = soup.find_all("table", {"class" : "Lh(1.7) W(100%) M(0)"})
+    tabl = soup.find_all("div", {"class" : "M(0) Mb(10px) Whs(n) BdEnd Bdc($seperatorColor) D(itb)"})
     for t in tabl:
-        rows = t.find_all("tr")
+        rows = t.find_all("div",{"class":"D(tbr) C($primaryColor)"})
         for row in rows:
             if len(row.get_text(separator='|').split("|")[0:2])>1:
                 temp_dir[row.get_text(separator='|').split("|")[0]]=row.get_text(separator='|').split("|")[1]
