@@ -4,7 +4,6 @@
 
 # Please report bug/issues in the Q&A section
 # =============================================================================
-
 import time
 import numpy as np
 
@@ -20,8 +19,8 @@ def main():
     print("%dth fibonacci number is : %d"%(num,fibonacci(num)))
 
 # Continuous execution        
-starttime=time.time()
-timeout = time.time() + 60*2  # 60 seconds times 2 meaning the script will run for 2 minutes
+starttime= time.time()
+timeout = time.time() + 60 * 2  # 60 seconds times 2 meaning the script will run for 2 minutes
 while time.time() <= timeout:
     try:
         main()
@@ -29,4 +28,3 @@ while time.time() <= timeout:
     except KeyboardInterrupt:
         print('\n\nKeyboard exception received. Exiting.')
         exit()
-        

@@ -9,7 +9,7 @@ import fxcmpy
 import numpy as np
 from stocktrends import Renko
 import statsmodels.api as sm
-import time
+from strategy import time
 import copy
 
 #initiating API connection and defining trade parameters
@@ -161,13 +161,13 @@ def main():
 
 
 # Continuous execution        
-starttime=time.time()
-timeout = time.time() + 60*60*1  # 60 seconds times 60 meaning the script will run for 1 hr
-while time.time() <= timeout:
+starttime= strategy.time()
+timeout = strategy.time() + 60 * 60 * 1  # 60 seconds times 60 meaning the script will run for 1 hr
+while strategy.time() <= timeout:
     try:
-        print("passthrough at ",time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
+        print("passthrough at ", time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(strategy.time())))
         main()
-        time.sleep(300 - ((time.time() - starttime) % 300.0)) # 5 minute interval between each new execution
+        time.sleep(300 - ((strategy.time() - starttime) % 300.0)) # 5 minute interval between each new execution
     except KeyboardInterrupt:
         print('\n\nKeyboard exception received. Exiting.')
         exit()

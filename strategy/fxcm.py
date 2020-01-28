@@ -5,7 +5,6 @@
 # Please report bug/issues in the Q&A section
 # =============================================================================
 import fxcmpy
-import time
 
 #initiating API connection and defining trade parameters
 token_path = "D:\\Udemy\\Quantitative Investing Using Python\\7_API Trading\\key.txt"
